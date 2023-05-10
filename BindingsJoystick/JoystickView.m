@@ -421,7 +421,7 @@ static char OffsetObservationContext;
      If we have a multiple selection for offset and Shift key is pressed then don't update the offset.
      This allows the offset to remain constant while the angle is changed.
      */
-    if (!(multipleSelectionForOffset && ([event modifierFlags] & NSShiftKeyMask)))
+    if (!(multipleSelectionForOffset && ([event modifierFlags] & NSEventModifierFlagShift)))
     {
         [self setOffset:newOffset];
         
@@ -436,7 +436,7 @@ static char OffsetObservationContext;
      If we have a multiple selection for angle and Shift key is pressed then don't update the angle.
      This allows the angle to remain constant while the offset is changed.
      */
-    if (!(multipleSelectionForAngle && ([event modifierFlags] & NSShiftKeyMask)))
+    if (!(multipleSelectionForAngle && ([event modifierFlags] & NSEventModifierFlagShift)))
     {
         float newAngle = atan2(xOffset, yOffset);
         
